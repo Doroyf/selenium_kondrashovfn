@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import  WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 
+
 class BasePage(object):
     """Класс для базовой страницы"""
     def __init__(self):
@@ -11,6 +12,7 @@ class BasePage(object):
         self.driver = webdriver.Chrome()
         self.driver.maximize_window()
         self.driver.get("https://demoqa.com/")
+
 
 class FunctionsForWork(BasePage):
     """Класс для работы с элементами страницы"""

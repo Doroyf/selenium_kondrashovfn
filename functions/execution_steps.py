@@ -1,7 +1,7 @@
 from functions.functions_for_work import FunctionsForWork
 
 
-class LocatorsAndNames():
+class LocatorsAndNames:
     """Класс локаторов элементов страницы"""
     XPATH_ELEMENT1 = "//*[text()='Elements']"
     XPATH_ELEMENT_MAIN_HEADER = "//*[@class='main-header']"
@@ -18,7 +18,9 @@ class LocatorsAndNames():
     ELEMENT_TEXT2 = 'Check Box'
     ELEMENT_TEXT3 = 'You have selected :wordFile'
 
-class StepsOfTask():
+
+class StepsOfTask:
+    @staticmethod
     def task_steps():
         el = LocatorsAndNames()
         step = FunctionsForWork()
@@ -31,5 +33,7 @@ class StepsOfTask():
         step.element_click(element_xpath=el.XPATH_ELEMENT_DOWNLOWDS)
         step.check_element_find(element_xpath=el.XPATH_ELEMENT_DOWNLOWDS_DIRECTORY, element='Директория Downlowds')
         step.element_click(element_xpath=el.XPATH_ELEMENT_WORDFILE)
-        step.element_text_special(element_xpath1=el.XPATH_ELEMENT_WORDFILE_NOTIFICATION_TEXT_PART1, element_xpath2=el.XPATH_ELEMENT_WORDFILE_NOTIFICATION_TEXT_PART2, element_name=el.ELEMENT_TEXT3)
+        step.element_text_special(element_xpath1=el.XPATH_ELEMENT_WORDFILE_NOTIFICATION_TEXT_PART1,
+                                  element_xpath2=el.XPATH_ELEMENT_WORDFILE_NOTIFICATION_TEXT_PART2,
+                                  element_name=el.ELEMENT_TEXT3)
         step.close_driver()
